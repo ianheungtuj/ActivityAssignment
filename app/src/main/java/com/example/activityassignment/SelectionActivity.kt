@@ -73,16 +73,3 @@ class SelectionActivity : AppCompatActivity() {
         )
     }
 }
-
-//        val adapter = ImageAdapter(images) { item ->
-//            val intent = Intent(this@SelectionActivity, DisplayActivity::class.java).apply {
-//                putExtra("IMAGE_ID", item.id)
-//                putExtra("IMAGE_NAME", item.name)
-//            }
-//            startActivity(intent)
-//        }
-//
-//        recyclerView.adapter = adapter
-//        recyclerView.layoutManager = GridLayoutManager(this, 3)
-//    }
-//}

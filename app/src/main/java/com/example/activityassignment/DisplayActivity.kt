@@ -1,5 +1,6 @@
 package com.example.activityassignment
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -26,8 +27,10 @@ class DisplayActivity : AppCompatActivity() {
         imageView.setImageResource(imageId)
         textView.text = imageName
 
+        val intent = Intent(this, SelectionActivity::class.java)
 
-
-
+        closeButton.setOnClickListener {
+            startActivity(intent)
+        }
     }
 }
