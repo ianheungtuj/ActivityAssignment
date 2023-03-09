@@ -1,20 +1,45 @@
 package com.example.activityassignment
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class SelectionActivity : AppCompatActivity() {
 
-    lateinit var recyclerView : RecyclerView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var imageAdapter: ImageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Get the RecyclerView from the layout
         recyclerView = findViewById(R.id.recyclerView)
 
-        val images = arrayOf(
+        // Set the layout manager for the RecyclerView
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
+
+        // Create an adapter with the image data and a callback for item click events
+        imageAdapter = ImageAdapter(getImageData()) { imageItem ->
+            // Create an intent to launch the DisplayActivity
+            val intent = Intent(this, DisplayActivity::class.java)
+
+            // Put the image data into the intent as extras
+            intent.putExtra("imageId", imageItem.id)
+            intent.putExtra("imageName", imageItem.name)
+
+            // Launch the DisplayActivity
+            startActivity(intent)
+        }
+
+        // Set the adapter for the RecyclerView
+        recyclerView.adapter = imageAdapter
+    }
+
+    private fun getImageData(): List<ImageItem> {
+        return listOf(
             ImageItem(R.drawable.atlantahawks, "Atlanta Hawks"),
             ImageItem(R.drawable.bostonceltics, "Boston Celtics"),
             ImageItem(R.drawable.brooklynnets, "Brooklyn Nets"),
@@ -46,6 +71,18 @@ class SelectionActivity : AppCompatActivity() {
             ImageItem(R.drawable.utahjazz, "Utah Jazz"),
             ImageItem(R.drawable.washingtonwizards, "Washington Wizards"),
         )
-
     }
 }
+
+//        val adapter = ImageAdapter(images) { item ->
+//            val intent = Intent(this@SelectionActivity, DisplayActivity::class.java).apply {
+//                putExtra("IMAGE_ID", item.id)
+//                putExtra("IMAGE_NAME", item.name)
+//            }
+//            startActivity(intent)
+//        }
+//
+//        recyclerView.adapter = adapter
+//        recyclerView.layoutManager = GridLayoutManager(this, 3)
+//    }
+//}
