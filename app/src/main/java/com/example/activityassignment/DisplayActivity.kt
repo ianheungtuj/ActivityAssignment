@@ -29,6 +29,7 @@ class DisplayActivity : AppCompatActivity() {
 
         val intent = Intent(this, SelectionActivity::class.java)
 
+        // Brings you back to SelectionActivity
         closeButton.setOnClickListener {
             startActivity(intent)
         }

@@ -30,11 +30,9 @@ class SelectionActivity : AppCompatActivity() {
             intent.putExtra("imageId", imageItem.id)
             intent.putExtra("imageName", imageItem.name)
 
-            // Launch the DisplayActivity
             startActivity(intent)
         }
 
-        // Set the adapter for the RecyclerView
         recyclerView.adapter = imageAdapter
     }
 
