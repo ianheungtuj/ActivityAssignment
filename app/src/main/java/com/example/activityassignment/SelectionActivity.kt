@@ -12,6 +12,8 @@ class SelectionActivity : AppCompatActivity() {
     private lateinit var imageAdapter: ImageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val nbaTeams = resources.getStringArray(R.array.nba_teams)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -22,7 +24,7 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 3)
 
         // Create an adapter with the image data and a callback for item click events
-        imageAdapter = ImageAdapter(getImageData()) { imageItem ->
+        imageAdapter = ImageAdapter(getImageData(nbaTeams)) { imageItem ->
             // Create an intent to launch the DisplayActivity
             val intent = Intent(this, DisplayActivity::class.java)
 
@@ -36,38 +38,38 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.adapter = imageAdapter
     }
 
-    private fun getImageData(): List<ImageItem> {
+    private fun getImageData(nbaTeams: Array<String>): List<ImageItem> {
         return listOf(
-            ImageItem(R.drawable.atlantahawks, "Atlanta Hawks"),
-            ImageItem(R.drawable.bostonceltics, "Boston Celtics"),
-            ImageItem(R.drawable.brooklynnets, "Brooklyn Nets"),
-            ImageItem(R.drawable.charlottehornets, "Charlotte Hornets"),
-            ImageItem(R.drawable.chicagobulls, "Chicago Bulls"),
-            ImageItem(R.drawable.clevelandcavaliers, "Cleveland Cavaliers"),
-            ImageItem(R.drawable.dallasmavericks, "Dallas Mavericks"),
-            ImageItem(R.drawable.denvernuggets, "Denver Nuggets"),
-            ImageItem(R.drawable.detroitpistons, "Detroit Pistons"),
-            ImageItem(R.drawable.goldenstatewarriors, "Golden State Warriors"),
-            ImageItem(R.drawable.houstonrockets, "Houston Rockets"),
-            ImageItem(R.drawable.indianapacers, "Indiana Pacers"),
-            ImageItem(R.drawable.losangelesclippers, "Los Angeles Clippers"),
-            ImageItem(R.drawable.losangeleslakers, "Los Angeles Lakers"),
-            ImageItem(R.drawable.memphisgrizzlies, "Memphis Grizzlies"),
-            ImageItem(R.drawable.miamiheat, "Miami Heat"),
-            ImageItem(R.drawable.milwaukeebucks, "Milwaukee Bucks"),
-            ImageItem(R.drawable.minnesotatimberwolves, "Minnesota Timberwolves"),
-            ImageItem(R.drawable.neworleanspelicans, "New Orleans Pelicans"),
-            ImageItem(R.drawable.newyorkknicks, "New York Knicks"),
-            ImageItem(R.drawable.oklahomacitythunder, "Oklahoma City Thunder"),
-            ImageItem(R.drawable.orlandomagic, "Orlando Magic"),
-            ImageItem(R.drawable.philadelphia76ers, "Philadelphia 76ers"),
-            ImageItem(R.drawable.phoneixsuns, "Phoenix Suns"),
-            ImageItem(R.drawable.portlandtrailblazers, "Portland Trailblazers"),
-            ImageItem(R.drawable.sacramentokings, "Sacramento Kings"),
-            ImageItem(R.drawable.sanantoniospurs, "San Antonio Spurs"),
-            ImageItem(R.drawable.torontoraptors, "Toronto Raptors"),
-            ImageItem(R.drawable.utahjazz, "Utah Jazz"),
-            ImageItem(R.drawable.washingtonwizards, "Washington Wizards"),
+            ImageItem(R.drawable.atlantahawks, nbaTeams[0]),
+            ImageItem(R.drawable.bostonceltics, nbaTeams[1]),
+            ImageItem(R.drawable.brooklynnets, nbaTeams[2]),
+            ImageItem(R.drawable.charlottehornets, nbaTeams[3]),
+            ImageItem(R.drawable.chicagobulls, nbaTeams[4]),
+            ImageItem(R.drawable.clevelandcavaliers, nbaTeams[5]),
+            ImageItem(R.drawable.dallasmavericks, nbaTeams[6]),
+            ImageItem(R.drawable.denvernuggets, nbaTeams[7]),
+            ImageItem(R.drawable.detroitpistons, nbaTeams[8]),
+            ImageItem(R.drawable.goldenstatewarriors, nbaTeams[9]),
+            ImageItem(R.drawable.houstonrockets, nbaTeams[10]),
+            ImageItem(R.drawable.indianapacers, nbaTeams[11]),
+            ImageItem(R.drawable.losangelesclippers, nbaTeams[12]),
+            ImageItem(R.drawable.losangeleslakers, nbaTeams[13]),
+            ImageItem(R.drawable.memphisgrizzlies, nbaTeams[14]),
+            ImageItem(R.drawable.miamiheat, nbaTeams[15]),
+            ImageItem(R.drawable.milwaukeebucks, nbaTeams[16]),
+            ImageItem(R.drawable.minnesotatimberwolves, nbaTeams[17]),
+            ImageItem(R.drawable.neworleanspelicans, nbaTeams[18]),
+            ImageItem(R.drawable.newyorkknicks, nbaTeams[19]),
+            ImageItem(R.drawable.oklahomacitythunder, nbaTeams[20]),
+            ImageItem(R.drawable.orlandomagic, nbaTeams[21]),
+            ImageItem(R.drawable.philadelphia76ers, nbaTeams[22]),
+            ImageItem(R.drawable.phoneixsuns, nbaTeams[23]),
+            ImageItem(R.drawable.portlandtrailblazers, nbaTeams[24]),
+            ImageItem(R.drawable.sacramentokings, nbaTeams[25]),
+            ImageItem(R.drawable.sanantoniospurs, nbaTeams[26]),
+            ImageItem(R.drawable.torontoraptors, nbaTeams[27]),
+            ImageItem(R.drawable.utahjazz, nbaTeams[28]),
+            ImageItem(R.drawable.washingtonwizards, nbaTeams[29])
         )
     }
 }

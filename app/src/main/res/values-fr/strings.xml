@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Activité Assignée</string>
+    <string name="instructions">Cliquez sur une image ci-dessous pour la visualiser</string>
+    <string name="button">Fermer</string>
+    <string name="display_activity">Activité d\'affichage</string>
+
+    <string-array
+        name="nba_teams">
+        <item>Hawks d\'Atlanta</item>
+        <item>Celtics de Boston</item>
+        <item>Nets de Brooklyn</item>
+        <item>Hornets de Charlotte</item>
+        <item>Bulls de Chicago</item>
+        <item>Cavaliers de Cleveland</item>
+        <item>Mavericks de Dallas</item>
+        <item>Nuggets de Denver</item>
+        <item>Pistons de Détroit</item>
+        <item>Warriors de Golden State</item>
+        <item>Rockets de Houston</item>
+        <item>Pacers de l\'Indiana</item>
+        <item>Clippers de Los Angeles</item>
+        <item>Lakers de Los Angeles</item>
+        <item>Grizzlies de Memphis</item>
+        <item>Heat de Miami</item>
+        <item>Bucks de Milwaukee</item>
+        <item>Timberwolves du Minnesota</item>
+        <item>Pelicans de La Nouvelle-Orléans</item>
+        <item>Knicks de New York</item>
+        <item>Thunder d\'Oklahoma City</item>
+        <item>Magic d\'Orlando</item>
+        <item>76ers de Philadelphie</item>
+        <item>Suns de Phoenix</item>
+        <item>Trail Blazers de Portland</item>
+        <item>Kings de Sacramento</item>
+        <item>Spurs de San Antonio</item>
+        <item>Raptors de Toronto</item>
+        <item>Jazz de l\'Utah</item>
+        <item>Wizards de Washington</item>
+    </string-array>
+</resources>

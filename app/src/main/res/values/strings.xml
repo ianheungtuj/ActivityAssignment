@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Activity Assignment</string>
     <string name="instructions">Click an Image Below to View</string>
+    <string name="button">Close</string>
+    <string name="display_activity">Display Activity</string>
+
     <string-array
         name="nba_teams">
         <item>Atlanta Hawks</item>
